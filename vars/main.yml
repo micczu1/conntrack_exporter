@@ -6,5 +6,6 @@ go_arch_map:
   armv7l: 'armv7'
   armv6l: 'armv6'
 
-__conntrack_exporter_user: connt-exp
-__conntrack_exporter_group: connt-exp
+# Access to NetFilter socket need higher privileges
+#__conntrack_exporter_user: connt-exp
+#__conntrack_exporter_group: connt-exp

@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-User={{ __conntrack_exporter_user }}
-Group={{ __conntrack_exporter_group }}
+User={{ __conntrack_exporter_user|default("root") }}
+Group={{ __conntrack_exporter_group|default("root") }}
 ExecStart=/usr/local/bin/conntrack_exporter \
     --listen-port={{conntrack_exporter_listen_port|default(9101)}} 
 

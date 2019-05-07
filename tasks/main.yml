@@ -5,6 +5,7 @@
     name: "{{ __conntrack_exporter_group }}"
     state: present
     system: true
+  when: __conntrack_exporter_group is defined
 
 - name: Create the Conntrack Exporter user
   user:
@@ -15,6 +16,7 @@
     system: true
     createhome: false
     home: /
+  when: __conntrack_exporter_user is defined
 
 - name: Download conntrack_exporter binary to local folder
   become: false
